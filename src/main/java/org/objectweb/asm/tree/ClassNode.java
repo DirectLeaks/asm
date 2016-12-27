@@ -31,7 +31,9 @@ package org.objectweb.asm.tree;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.objectweb.asm.AnnotationVisitor;
 import org.objectweb.asm.Attribute;
@@ -182,6 +184,11 @@ public class ClassNode extends ClassVisitor {
      * @associates org.objectweb.asm.tree.MethodNode
      */
     public List<MethodNode> methods;
+
+	/**
+	 * Metadata associated with this {@link ClassNode}
+	 */
+	public Map<String, Object> metadata = new HashMap<>();
 
     /**
      * Constructs a new {@link ClassNode}. <i>Subclasses must not use this
